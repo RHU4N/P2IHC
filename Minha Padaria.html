@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Padaria</title>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+    <!-- Barra de status do sistema -->
+    <div id="status-bar"></div>
+
+    <!-- D: Correspondência entre o sistema e o mundo real -->
+    <div id="horario-funcionamento" style="background:#fffbe9; color:#4d2901; padding:10px 0; text-align:center; font-size:1.1em; border-bottom:2px solid #d2691e;">
+        <span style="font-size:1.3em;" aria-label="Relógio">⏰</span>
+        Aberto hoje das <strong>6h às 19h</strong> &mdash; Esperamos por você!
+    </div>
+
+    <!-- A: Visibilidade do status do sistema - Mensagem de boas-vindas dinâmica -->
+    <div id="welcome-bar" style="display:none; background:#ffe4b5; color:#4d2901; padding:10px; text-align:center; font-weight:bold;"></div>
+
+    <header>
+        <div class="header-logo">
+            <img src="logo.png" alt="Logo da Padaria">
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a class="btn-link" href="#">Doces</a></li>
+                <li><a class="btn-link" href="#">Salgados</a></li>
+                <li><a class="btn-link" href="#">Encomendas</a></li>
+                <li><a class="btn-link" href="#">Contato</a></li>
+                <li><a class="btn-link" href="#">Trabalhe Conosco</a></li>
+                <li>
+                    <a class="btn-link" href="#">
+                        <!-- Ícone de conta adicionado -->
+                        <img src="https://th.bing.com/th/id/OIP.ajgivL7ZDLyAl1l-9Y0MIgHaHa?r=0&rs=1&pid=ImgDetMain" alt="Ícone de Conta" class="icon-conta">
+                        Conta
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="destaque">
+        <h1>Minha Padaria</h1>
+        <div class="destaque-resumo">
+            <img src="img1.jpg" alt="Imagem da padaria">
+            <p>Bem-vindo à Minha Padaria! Aqui, unimos tradição e qualidade para oferecer pães fresquinhos, doces
+                irresistíveis e refeições caseiras todos os dias. Nosso compromisso é proporcionar sabor, aconchego e um
+                atendimento especial para você e sua família. Venha nos visitar e descubra o verdadeiro sabor da padaria
+                artesanal.</p>
+        </div>
+
+    </section>
+
+    <section class="cardapio">
+        <h2>Cardápio</h2>
+        <img src="padaria02.png" alt="Lanche 1">
+        <h3>Lanches</h3>
+        <div class="card">
+            <!-- A: Visibilidade do status do sistema, B: Consistência e padrões, C: Prevenção de erros -->
+            <div class="card-food affordance-card" tabindex="0" title="Clique para saber mais sobre o Lanche do Forno">
+                <img src="https://th.bing.com/th/id/OIP.9w2TT6WNRoglf9LLx1MLBwHaE8?w=268&h=180&c=7&r=0&o=5&pid=1.7"
+                    alt="Lanche do Forno com presunto, queijo e tomate" style="width:100%;border-radius:8px;margin-bottom:10px;">
+                <h4>Lanche do Forno</h4>
+                <p>Pão macio recheado com presunto, queijo e tomate, assado até dourar. Perfeito para qualquer hora do
+                    dia.</p>
+                <button class="btn-card" onclick="showStatus('Carregando detalhes do produto...')" aria-label="Ver detalhes do Lanche do Forno">Ver detalhes</button>
+            </div>
+
+            <div class="card-food affordance-card" tabindex="0" title="Clique para saber mais sobre o Lanche do Forno de Frango">
+                <img src="https://th.bing.com/th/id/OIP.9w2TT6WNRoglf9LLx1MLBwHaE8?w=268&h=180&c=7&r=0&o=5&pid=1.7"
+                    alt="Lanche do Forno com frango, requeijão e milho" style="width:100%;border-radius:8px;margin-bottom:10px;">
+                <h4>Lanche do Forno (Frango)</h4>
+                <p>Versão especial com frango desfiado, requeijão e milho, envolto em massa leve e crocante.</p>
+                <button class="btn-card" onclick="showStatus('Carregando detalhes do produto...')" aria-label="Ver detalhes do Lanche do Forno de Frango">Ver detalhes</button>
+            </div>
+
+            <div class="card-food affordance-card" tabindex="0" title="Clique para saber mais sobre o Lanche Clássico">
+                <img src="https://th.bing.com/th/id/OIP.9w2TT6WNRoglf9LLx1MLBwHaE8?w=268&h=180&c=7&r=0&o=5&pid=1.7"
+                    alt="Lanche Clássico com queijo, presunto e alface" style="width:100%;border-radius:8px;margin-bottom:10px;">
+                <h4>Lanche Clássico</h4>
+                <p>Pão francês fresquinho com queijo prato, presunto e alface. Simples, saboroso e tradicional.</p>
+                <button class="btn-card" onclick="showStatus('Carregando detalhes do produto...')" aria-label="Ver detalhes do Lanche Clássico">Ver detalhes</button>
+            </div>
+
+            <div class="card-food affordance-card" tabindex="0"
+                title="Clique para saber mais sobre o Lanche Bacon & Queijo">
+                <img src="https://th.bing.com/th/id/OIP.9w2TT6WNRoglf9LLx1MLBwHaE8?w=268&h=180&c=7&r=0&o=5&pid=1.7"
+                    alt="Lanche Bacon & Queijo com queijo derretido e bacon crocante" style="width:100%;border-radius:8px;margin-bottom:10px;">
+                <h4>Lanche Bacon & Queijo</h4>
+                <p>Pão artesanal recheado com queijo derretido e bacon crocante, finalizado com orégano.</p>
+                <button class="btn-card" onclick="showStatus('Carregando detalhes do produto...')" aria-label="Ver detalhes do Lanche Bacon & Queijo">Ver detalhes</button>
+            </div>
+        </div>
+
+        <h3>Refeições</h3>
+        <div class="card card-row">
+            <div class="card-food affordance-card" tabindex="0"
+                title="Clique para saber mais sobre o Frango Assado com Batatas">
+                <img src="https://th.bing.com/th/id/OIP.dIv643iFDSvHo0z0kN0YAwHaFj?w=210&h=180&c=7&r=0&o=5&pid=1.7"
+                    alt="Frango Assado com Batatas e ervas frescas" style="width:100%;border-radius:8px;margin-bottom:10px;">
+                <h4>Frango Assado com Batatas</h4>
+                <p>Frango temperado e assado lentamente, servido com batatas douradas e ervas frescas.</p>
+                <button class="btn-card" onclick="showStatus('Carregando detalhes do produto...')" aria-label="Ver detalhes do Frango Assado com Batatas">Ver detalhes</button>
+            </div>
+
+            <div class="card-food affordance-card" tabindex="0" title="Clique para saber mais sobre a Feijoada">
+                <img src="https://th.bing.com/th/id/OIP._hbt288YZVcoOkD7kyVcGwHaEK?w=302&h=180&c=7&r=0&o=5&pid=1.7"
+                    alt="Feijoada brasileira com arroz, couve e laranja" style="width:100%;border-radius:8px;margin-bottom:10px;">
+                <h4>Feijoada</h4>
+                <p>Tradicional feijoada brasileira com carnes selecionadas, acompanhada de arroz, couve e laranja.</p>
+                <button class="btn-card" onclick="showStatus('Carregando detalhes do produto...')" aria-label="Ver detalhes da Feijoada">Ver detalhes</button>
+            </div>
+
+            <div class="card-food affordance-card" tabindex="0" title="Clique para saber mais sobre a Marmita Fit">
+                <img src="https://th.bing.com/th/id/OIP.8w2TT6WNRoglf9LLx1MLBwHaE8?w=268&h=180&c=7&r=0&o=5&pid=1.7"
+                    alt="Marmita Fit com arroz integral, frango grelhado e legumes" style="width:100%;border-radius:8px;margin-bottom:10px;">
+                <h4>Marmita Fit</h4>
+                <p>Arroz integral, frango grelhado e legumes frescos. Opção saudável e saborosa para o seu dia.</p>
+                <button class="btn-card" onclick="showStatus('Carregando detalhes do produto...')" aria-label="Ver detalhes da Marmita Fit">Ver detalhes</button>
+            </div>
+
+            <div class="card-food affordance-card" tabindex="0" title="Clique para saber mais sobre o Strogonoff de Carne">
+                <img src="https://th.bing.com/th/id/OIP.7w2TT6WNRoglf9LLx1MLBwHaE8?w=268&h=180&c=7&r=0&o=5&pid=1.7"
+                    alt="Strogonoff de Carne com arroz e batata palha" style="width:100%;border-radius:8px;margin-bottom:10px;">
+                <h4>Strogonoff de Carne</h4>
+                <p>Carne bovina ao molho cremoso de strogonoff, acompanhada de arroz branco e batata palha.</p>
+                <button class="btn-card" onclick="showStatus('Carregando detalhes do produto...')" aria-label="Ver detalhes do Strogonoff de Carne">Ver detalhes</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Minha Padaria - Todos os direitos reservados.</p>
+    </footer>
+    <!-- Heurísticas de Nielsen: A, B, C, D implementadas acima -->
+    <script>
+    // A: Visibilidade do status do sistema, C: Prevenção de erros
+    function showStatus(msg) {
+        const bar = document.getElementById('status-bar');
+        bar.innerText = msg;
+        bar.style.opacity = '1';
+        bar.style.pointerEvents = 'auto';
+        bar.style.display = 'block';
+        clearTimeout(bar._timeout);
+        bar._timeout = setTimeout(() => {
+            bar.style.opacity = '0';
+            bar.style.pointerEvents = 'none';
+        }, 1800);
+    }
+
+    // C: Prevenção de erros - Previne múltiplos cliques rápidos
+    document.querySelectorAll('.btn-card').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.disabled = true;
+            setTimeout(() => { btn.disabled = false; }, 2000);
+        });
+    });
+
+    // A: Visibilidade do status do sistema - Mensagem de boas-vindas ao carregar a página
+    window.addEventListener('DOMContentLoaded', () => {
+        const welcome = document.getElementById('welcome-bar');
+        welcome.innerText = 'Bem-vindo! Aproveite nossas ofertas do dia 😊';
+        welcome.style.display = 'block';
+        setTimeout(() => {
+            welcome.style.display = 'none';
+        }, 3000);
+    });
+    </script>
+</body>
+</html>

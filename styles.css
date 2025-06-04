@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #4d2901;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo img{
+    height: 70px;
+    width: 100px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    gap: 15px;
+}
+
+.destaque {
+    text-align: center;
+    padding: 40px;
+    background-color: #f8f3e2;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.destaque h1 {
+    font-family: 'Arial', sans-serif; 
+    font-size: 3em;
+    color: #d2691e; 
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.destaque p {
+    font-family: 'Georgia', serif; 
+    font-size: 1.2em;
+    color: #333; 
+    line-height: 1.6;
+    margin: 20px 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.destaque img {
+    width: 70%;
+    max-width: 600px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.destaque-resumo{
+    display: flex;
+    align-items: center;
+}
+
+.cardapio {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardapio h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2em;
+    color: #d2691e;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cardapio h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+}
+
+.cardapio img {
+    width: 70%;
+    max-width: 900px;
+    border-radius: 10px;
+}
+
+.card h4 {
+    font-family: 'Arial', sans-serif;
+    color: #d2691e;
+}
+
+.card-food{
+    width: 320px;
+    min-height: 180px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 8px 0;
+    padding: 20px 12px;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+
+.menu .btn-link {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #d2691e;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 6px rgba(210, 105, 30, 0.08);
+    cursor: pointer;
+}
+.menu .btn-link:hover, .menu .btn-link:focus {
+    background: #a0521d;
+    box-shadow: 0 4px 12px rgba(210, 105, 30, 0.18);
+    outline: none;
+}
+
+.affordance-card {
+    border: 2px solid transparent;
+    transition: border 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+.affordance-card:hover, .affordance-card:focus {
+    border: 2px solid #d2691e;
+    box-shadow: 0 0 10px #d2691e33;
+    background: #fff8f0;
+    outline: none;
+    
+}
+
+.btn-card {
+    margin-top: 10px;
+    padding: 7px 16px;
+    background: #d2691e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 6px rgba(210, 105, 30, 0.08);
+}
+.btn-card:hover, .btn-card:focus {
+    background: #a0521d;
+    box-shadow: 0 4px 12px rgba(210, 105, 30, 0.18);
+    outline: none;
+}
+.btn-card[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#status-bar {
+    /* A: Visibilidade do status do sistema */
+    font-size: 1.1em;
+    border-bottom: 2px solid #d2691e;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s;
+    z-index: 1000;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 280px;
+    max-width: 90vw;
+    background: #ffe4b5;
+    color: #4d2901;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #d2691e;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.icon-conta {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
